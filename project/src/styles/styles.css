@@ -1,0 +1,170 @@
+/* Стили для выдвигающихся социальных иконок */
+.social-panel {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.social-toggle {
+    display: none;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #4d4d4d;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.social-button i {
+    font-size: 20px;
+}
+.social-button:hover{
+    background: #696969;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.social-toggle:checked ~ .social-icons {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.social-toggle:checked + .social-button {
+    background: rgb(0, 132, 255);
+    transform: rotate(45deg);
+}
+
+/* Ваши существующие стили (оставьте без изменений) */
+body {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/images/background1.jpg");
+    background-size: cover;
+}
+
+.header {
+    background: #ffffff2d;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.dobro {
+    font-size: 45px;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.links {
+    color: #ffffff;
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    justify-content: center;    
+    text-align: center;
+    margin: 0px;
+
+}
+
+.links li a {
+    transition: all 0.2s ease;
+    padding: 5px 14px;
+    color: #afafaf;
+    text-decoration: none;
+}
+.links li a:hover {
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.zlo {
+    font-size: 25px;
+    color: #a0a0a0;
+}
+
+.header-icon {
+    width: 40px; /* Установите нужный размер */
+    height: auto; /* Сохраняет пропорции изображения */
+    margin-right: 10px; /* Отступ между иконкой и списком */
+}
+
+.penis {
+
+    figure{
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+        height: 460px;
+        img{
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+        }
+    }
+}
+.catalog-text{
+    font-size: 25px;
+    align-items: center;
+    text-align: center;
+    color: #969696;
+    justify-content: center;
+    padding-top: 250px;
+}

@@ -1,194 +1,223 @@
 /* Стили для выдвигающихся социальных иконок */
 .social-panel {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    z-index: 1000;
+   position: fixed;
+   left: 20px;
+   bottom: 20px;
+   z-index: 1000;
 }
 
 .social-toggle {
-    display: none;
+   display: none;
 }
 
 .social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: #4d4d4d;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 50px;
+   height: 50px;
+   background: #4d4d4d;
+   color: white;
+   border-radius: 50%;
+   cursor: pointer;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+   transition: all 0.3s ease;
 }
 
 .social-button i {
-    font-size: 20px;
+   font-size: 20px;
 }
-.social-button:hover{
-    background: #696969;
+.social-button:hover {
+   background: #696969;
 }
 
 .social-icons {
-    position: absolute;
-    bottom: 60px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
+   position: absolute;
+   bottom: 60px;
+   left: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(20px);
+   transition: all 0.3s ease;
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background: white;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+   transition: all 0.2s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
+   transform: scale(1.1);
 }
 
 .social-icon img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
+   width: 60%;
+   height: 60%;
+   object-fit: contain;
 }
 
 .social-toggle:checked ~ .social-icons {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
 }
 
 .social-toggle:checked + .social-button {
-    background: rgb(0, 132, 255);
-    transform: rotate(45deg);
+   background: rgb(0, 132, 255);
+   transform: rotate(45deg);
 }
 
 /* Ваши существующие стили (оставьте без изменений) */
 body {
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
+   font-family: "Jost", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+   margin: 0;
+   padding: 0;
 }
 
 .header {
-    background: #ffffff2d;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    margin: 0;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    display: flex;
+   background: #ffffff2d;
+   color: #ffffff;
+   justify-content: center;
+   align-items: center;
+   font-size: 18px;
+   margin: 0;
+   padding-left: 20px;
+   padding-top: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+   display: flex;
 }
 
 .dobro {
-    font-size: 45px;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    justify-content: center;
-    padding-top: 100px;
-
+   font-size: 45px;
+   align-items: center;
+   text-align: center;
+   color: #ffffff;
+   justify-content: center;
+   padding-top: 100px;
 }
 
 .links {
-    color: #ffffff;
-    display: flex;
-    gap: 60px;
-    list-style: none;
-    justify-content: center;    
-    text-align: center;
-    margin: 0px;
-
+   color: #ffffff;
+   display: flex;
+   gap: 60px;
+   list-style: none;
+   justify-content: center;
+   text-align: center;
+   margin: 0px;
 }
 
 .links li a {
-    transition: all 0.2s ease;
-    padding: 5px 14px;
-    color: #afafaf;
-    text-decoration: none;
+   transition: all 0.2s ease;
+   padding: 5px 14px;
+   color: #afafaf;
+   text-decoration: none;
 }
 .links li a:hover {
-    color: #ffffff;
-    transition: all 0.2s ease;
+   color: #ffffff;
+   transition: all 0.2s ease;
 }
 
 .zlo {
-    font-size: 25px;
-    padding-bottom: 400px;
-    color: #a0a0a0;
-    margin: 0
+   font-size: 25px;
+   padding-bottom: 400px;
+   color: #a0a0a0;
+   margin: 0;
 }
 
 .header-icon {
-    width: 40px; /* Установите нужный размер */
-    height: auto; /* Сохраняет пропорции изображения */
-    margin-right: 10px; /* Отступ между иконкой и списком */
+   width: 40px; /* Установите нужный размер */
+   height: auto; /* Сохраняет пропорции изображения */
+   margin-right: 10px; /* Отступ между иконкой и списком */
 }
 
 .penis {
-
-    figure{
-        color: white;
-        text-align: center;
-        font-size: 20px;
-        margin: 20px;
-        height: 460px;
-        img{
-            width: 100%;
-            height: 90%;
-        }
-    }
+   figure {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      margin: 20px;
+      height: 460px;
+      img {
+         width: 100%;
+         height: 90%;
+      }
+   }
 }
-.catalog-text{
-    font-size: 25px;
-    align-items: left;
-    text-align: left;
-    color: #01649eb0;
-    justify-content: center;
-    padding-top: 35px;
-    padding-left: 35px;
+.catalog-text {
+   font-size: 25px;
+   align-items: left;
+   text-align: left;
+   color: #01649eb0;
+   justify-content: center;
+   padding-top: 35px;
+   padding-left: 35px;
 }
 .catalog1 {
-    background-image: url(../../assets/images/translucent-image.png);
-    align-items: center;
-    background-size: cover;
-    justify-content: left;
-
-    
-    
-
+   background-image: url(../../assets/images/translucent-image.png);
+   align-items: center;
+   background-size: cover;
+   justify-content: left;
 }
 .penis1 {
-    padding-bottom: 0px;
+   padding-bottom: 0px;
 }
 .body1 {
-    background-image: url("../../assets/images/background1.jpg");
-    background-size: cover;
-
+   background-image: url("../../assets/images/background1.jpg");
+   background-size: cover;
 }
 
+.penis2 {
+   font-size: 70px;
+}
 
-.penis2{
-    font-size: 70px;
+.onas {
+   background-image: url(../../assets/images/EE3FEC1F-E548-4470-B.jpeg);
+   background-size: cover;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.onas-content {
+   display: flex;
+   justify-content: space-between;
+}
+
+.onas-text {
+    background-color: #696969;
+    height: max-content;
+    padding: 16px;
+    border-radius: 20px;
+   font-size: 25px;
+   color: #1ff35f;
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   margin: 0;
+}
+
+.end-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
 }

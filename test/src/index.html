@@ -1,162 +1,882 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Республика Карелия - Туроператор Карелия-Лайнс</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=M+PLUS+1p&display=swap");
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
 
-      <title>Republic of Karelia</title>
+        /* Герой-секция */
+        .hero-section {
+            background-image: url('../assets/images/background1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
 
-      <link rel="stylesheet" href="styles/styles.css" />
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.2);
+        }
 
-      <link rel="stylesheet" type="text/css" href="../../slick/slick.css" />
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="../../slick/slick-theme.css"
-      />
+        .header-icon {
+            width: 50px;
+            height: auto;
+        }
 
-      <style>
-         @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=M+PLUS+1p&display=swap");
-      </style>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
 
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      />
-   </head>
-   <body>
-      <section class="body1">
-         <header class="header">
-            <img src="../assets/svg/logo.svg" alt="Icon" class="header-icon" />
-            <ul class="links">
-               <li>
-                  <a href="http://127.0.0.1:5500/project/src/index.html"
-                     >Главная</a
-                  >
-               </li>
-               <li>
-                  <a href="https://ticrk.ru/en/karelia/nature-of-karelia/"
-                     >Каталог</a
-                  >
-               </li>
-               <li><a href="https://www.citymoscow.ru/">Контакты</a></li>
-               <li>
-                  <a
-                     href="https://www.google.com/search?sca_esv=69ac19332292058f&rlz=1C1GCEB_enRU1133RU1133&q=%D0%B1%D0%BE%D1%80%D0%BE%D0%B2%D1%8B&udm=2&fbs=ABzOT_AHK5AnouJJKCp3GWxZwUCodbYOsOrMNnD2NFt0zIcgUY-FKhgcLMDiTEH_olcORdxo0tc8Cuep7JPtYBRX0qIEX_NUeznHB9W9X1FHvYWWB3IrFQ_weg6o6-HWSDJlFTvtWK3-mC6b4_4rGUh2sVVyOJy8xYT_UoDsrickDUnS0dbX19NobGwcw0MX5QHB1xukooFnbjq562Z4NNFUyg-zNSWduNZQGfhvbPPTEx7Tud4yaT1EnaSomACYIjQIiKWdaxbetgnDvktsx_jgHYsUlLEN0g&sa=X&ved=2ahUKEwiXls2ryvqMAxVpCBAIHZBXCfcQtKgLegQIFhAB&biw=1536&bih=762&dpr=1.25"
-                     >О нас</a
-                  >
-               </li>
-               <li>
-                  <a
-                     href="https://www.google.com/search?sca_esv=69ac19332292058f&rlz=1C1GCEB_enRU1133RU1133&q=%D0%BA%D0%B0%D1%80%D0%B5%D0%BB%D0%B8%D1%8F+%D1%84%D0%BE%D1%82%D0%BE+%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B&udm=2&fbs=ABzOT_AL7GBrgK36ZhLzkdisuo22X5wz2Lwb53yjDBcTZt6SK2UcLDmtfZJAsKqToIBbWnzHKH1SrC4Ft5THflpNWO-SOyxpNGO8AlJbk8M4wumK3erhTNukd6GmzBax9xsW1oZO_hpUJmMqeUJUfzEfrOWY-Ff8wzYbAnz7ZYybjNXCPxMGy9ahL2u55rGI6X36O_YY2j7UdvLq4r_kYnlWLRMtFt5eHlhHaKvJV1FYYM5zb_TsZxfLck4FsTZjIzJMhXM5e66Kc_MLyMzkFYEpeHb0QQsJ8Q&sa=X&ved=2ahUKEwj7sO2-yvqMAxWzKRAIHRw2CLQQtKgLegQIExAB&biw=1536&bih=762&dpr=1.25"
-                     >Галерея</a
-                  >
-               </li>
-            </ul>
-         </header>
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
 
-         <div class="dobro">
+        .nav-links a:hover, .nav-links a.active {
+            color: #4CAF50;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #ddd;
+        }
+
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            width: fit-content;
+            margin: 0 auto;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #3e8e41;
+        }
+
+        /* Секции */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #a5a5a5;
+        }
+
+        /* Каталог туров */
+        .catalog-section {
+            padding: 80px 5%;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('../assets/images/img_66577a1be2e34.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .tours-slider {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .tour-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .tour-info {
+            padding: 20px;
+        }
+
+        .tour-info h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .tour-duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        .tour-description {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .tour-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .tour-button:hover {
+            background: #2980b9;
+        }
+
+        /* О нас */
+        .about-section {
+            padding: 80px 5%;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../assets/images/8f7f0368-f326-49df-95a3-88935cdb43aa..jpg');
+            background-size: cover;
+            color: white;
+        }
+
+        .about-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            background: rgba(255,255,255,0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #333;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .signature img {
+            width: 50px;
+            height: auto;
+        }
+
+        .about-gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .gallery-top {
+            display: flex;
+            gap: 20px;
+        }
+
+        .gallery-top img, .gallery-bottom {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-top img {
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-bottom {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Галерея */
+        .gallery-section {
+            padding: 80px 5%;
+            background-color: #f5f5f5;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Jost', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .location-slider {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        .location-slider.active {
+            display: block;
+        }
+
+        .location-slide {
+            padding: 0 10px;
+            position: relative;
+        }
+
+        .location-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .slick-prev, .slick-next {
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            font-size: 40px;
+            color: #4CAF50;
+        }
+
+        .slick-prev {
+            left: 10px;
+        }
+
+        .slick-next {
+            right: 10px;
+        }
+
+        .slick-dots {
+            bottom: 20px;
+        }
+
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: white;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: #4CAF50;
+        }
+
+        .gallery-comment {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-comment p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .comment-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .comment-button, .continue-button {
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .comment-button {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .comment-button:hover {
+            background: #3e8e41;
+        }
+
+        .continue-button {
+            background: #3498db;
+            color: white;
+        }
+
+        .continue-button:hover {
+            background: #2980b9;
+        }
+
+        /* Футер */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 5% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-links h4, .footer-contacts h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ecf0f1;
+        }
+
+        .footer-contacts p {
+            margin: 10px 0;
+            color: #bdc3c7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Социальные иконки */
+        .social-panel {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+        }
+
+        .social-toggle {
+            display: none;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #4d4d4d;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-button i {
+            font-size: 20px;
+        }
+
+        .social-button:hover {
+            background: #696969;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+
+        .social-toggle:checked ~ .social-icons {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .social-toggle:checked + .social-button {
+            background: #3498db;
+            transform: rotate(45deg);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .gallery-row {
+                flex-direction: column;
+            }
+            
+            .comment-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tour-card {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <header class="header">
+            <img src="../assets/svg/logo.svg" alt="Логотип Карелия-Лайнс" class="header-icon" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="catalog.html">Каталог туров</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="hero-content">
             <h1>Добро пожаловать в Карелию</h1>
-            <p class="zlo">
-               Приглашаем вас в лучшее путешествие в вашей жизни, мы создадим
-               ваш отпуск!
+            <p class="hero-subtitle">
+                Откройте для себя удивительную природу, богатую культуру и незабываемые приключения в сердце Русского Севера
             </p>
-         </div>
-      </section>
+            <a href="#catalog" class="cta-button">Выбрать тур</a>
+        </div>
+    </section>
 
-      <section class="catalog1">
-         <div class="catalog-text">
-            <h1 class="penis2">КАТАЛОГ</h1>
-            <p class="penis3">
-               Задача организации, в особенности же слоgfжившаяся
-            </p>
-         </div>
-         <div class="penis">
-            <figure>
-               <img src="../assets/images/images.jpg" alt="" />
-               <figcaption>Роман пенис</figcaption>
-            </figure>
-            <figure>
-               <img src="../assets/images/Без названия (1).jpg" alt="" />
-               <figcaption>Ромашка</figcaption>
-            </figure>
-            <figure>
-               <img src="../assets/images/Без названия (2).jpg" alt="" />
-               <figcaption>РОман кидала</figcaption>
-            </figure>
-            <figure>
-               <img src="../assets/images/Без названия.jpg" alt="" />
-               <figcaption>Роман слабый</figcaption>
-            </figure>
-         </div>
-      </section>
-
-      <section class="onas">
-         <h1 class="anal">О НАС</h1>
-         <div class="onas-content">
-            <div class="onas-text">
-               <p class="onal">
-                  Туроператор "Карелия-лайнс" организует туры по Карелии и
-                  Соловкам с 2012 года. Мы постоянно развиваемся и становимся
-                  лучше. Цель нашей работы - подарить Вам яркие и положительные
-                  впечатления от поездки, чтобы Вы захотели вернуться к нам
-                  снова. Наши менеджеры - профессионалы своего дела, кроме того,
-                  они живут в Карелии, а это значит, что они очень хорошо знают
-                  свой край и смогут подобрать тур или экскурсию, которая
-                  подойдет именно вам.
-               </p>
-               <div class="end-line">
-                  <p class="onal2">Ощути Карелию вместе с нами!</p>
-                  <img src="../assets/svg/logo.svg" alt="Icon" />
-               </div>
+    <section class="catalog-section" id="catalog">
+        <div class="section-header">
+            <h2>Популярные туры</h2>
+            <p>Выберите путешествие своей мечты среди наших лучших предложений</p>
+        </div>
+        <div class="tours-slider">
+            <div class="tour-card">
+                <img src="../assets/images/kizhi.jpg" alt="Остров Кижи" />
+                <div class="tour-info">
+                    <h3>Остров Кижи</h3>
+                    <p class="tour-duration">2 дня / 1 ночь</p>
+                    <p class="tour-description">Знакомство с архитектурным ансамблем Кижского погоста</p>
+                    <a href="#" class="tour-button">Подробнее</a>
+                </div>
             </div>
-
-            <div>
-               <div>
-                  <img src="../assets/images/kizhi-570-3.jpg " alt="Icon" />
-                  <img src="../assets/images/kizhi-570-3.jpg  " alt="Icon" />
-               </div>
-               <img src="../assets/images/kizhi-570-3.jpg  " alt="Icon" />
+            <div class="tour-card">
+                <img src="../assets/images/ruskeala.jpeg" alt="Горный парк Рускеала" />
+                <div class="tour-info">
+                    <h3>Горный парк Рускеала</h3>
+                    <p class="tour-duration">3 дня / 2 ночи</p>
+                    <p class="tour-description">Мраморный каньон, подземные озера и захватывающие дух пейзажи</p>
+                    <a href="#" class="tour-button">Подробнее</a>
+                </div>
             </div>
-         </div>
-      </section>
+            <div class="tour-card">
+                <img src="../assets/images/vaalam.jpg" alt="Остров Валаам" />
+                <div class="tour-info">
+                    <h3>Остров Валаам</h3>
+                    <p class="tour-duration">3 дня / 2 ночи</p>
+                    <p class="tour-description">Духовное сердце Карелии - Валаамский монастырь и уникальная природа архипелага</p>
+                    <a href="#" class="tour-button">Подробнее</a>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="../assets/images/solovki.jpg" alt="Соловецкие острова" />
+                <div class="tour-info">
+                    <h3>Соловецкие острова</h3>
+                    <p class="tour-duration">4 дня / 3 ночи</p>
+                    <p class="tour-description">История, природа и загадки Соловецкого архипелага</p>
+                    <a href="#" class="tour-button">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="social-panel">
-         <input type="checkbox" id="social-toggle" class="social-toggle" />
-         <label for="social-toggle" class="social-button">
+    <section class="about-section">
+        <div class="section-header">
+            <h2 class="about-us-text">О нас</h2>
+            <p>Почему стоит выбрать нас для вашего путешествия по Карелии</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Туроператор "Карелия-Лайнс" организует туры по Карелии и Соловкам с 2012 года. Мы постоянно развиваемся и становимся лучше.</p>
+                <p>Цель нашей работы - подарить вам яркие и положительные впечатления от поездки, чтобы вы захотели вернуться к нам снова.</p>
+                <p>Наши менеджеры - профессионалы своего дела, которые живут в Карелии и прекрасно знают свой край. Они помогут подобрать тур или экскурсию, которая подойдет именно вам.</p>
+                <div class="signature">
+                    <p>Ощути Карелию вместе с нами!</p>
+                    <img src="../assets/svg/logo.svg" alt="Логотип Карелия-Лайнс" />
+                </div>
+            </div>
+            <div class="about-gallery">
+                <div class="gallery-top">
+                    <img src="../assets/images/priroda-karelii-1536x1024.jpg" alt="Фото Карелии" />
+                    <img src="../assets/images/otdyh-v-karelii.jpg" alt="Фото Карелии" />
+                </div>
+                <img src="../assets/images/rekashuya.jpg" alt="Фото Карелии" class="gallery-bottom" />
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Галерея</h2>
+            <p>Выберите локацию для просмотра фотографий</p>
+        </div>
+        
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-location="all">Все локации</button>
+            <button class="filter-btn" data-location="ruskeala">Рускеала</button>
+            <button class="filter-btn" data-location="kizhi">Кижи</button>
+            <button class="filter-btn" data-location="valaam">Валаам</button>
+            <button class="filter-btn" data-location="solovki">Соловки</button>
+        </div>
+        
+        <!-- Слайдер для всех локаций -->
+        <div class="location-slider active" id="slider-all">
+            <div class="location-slide">
+                <img src="../assets/images/7114e86e8099319b1b6dd24ee3de0f76.jpg" alt="Карелия">
+                <div class="slide-caption">Природа Карелии</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/dd575810-fc6f-437e-b534-fdf5c9a68722.jpeg" alt="Карелия">
+                <div class="slide-caption">Озёра Карелии</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/mramornyy_kanon_ruskeala.jpg" alt="Карелия">
+                <div class="slide-caption">Лесные пейзажи</div>
+            </div>
+        </div>
+        
+        <!-- Слайдер для Рускеалы -->
+        <div class="location-slider" id="slider-ruskeala">
+            <div class="location-slide">
+                <img src="../assets/images/ruskeala.jpeg" alt="Рускеала">
+                <div class="slide-caption">Мраморный каньон</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/rekashuya.jpg" alt="Рускеала">
+                <div class="slide-caption">Подземное озеро</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/ruskeala-3.jpg" alt="Рускеала">
+                <div class="slide-caption">Вид сверху</div>
+            </div>
+        </div>
+        
+        <!-- Слайдер для Кижи -->
+        <div class="location-slider" id="slider-kizhi">
+            <div class="location-slide">
+                <img src="../assets/images/kizhi-1.jpg" alt="Кижи">
+                <div class="slide-caption">Кижский погост</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/kizhi-2.jpg" alt="Кижи">
+                <div class="slide-caption">Деревянные церкви</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/kizhi-3.jpg" alt="Кижи">
+                <div class="slide-caption">Музей под открытым небом</div>
+            </div>
+        </div>
+        
+        <!-- Слайдер для Валаама -->
+        <div class="location-slider" id="slider-valaam">
+            <div class="location-slide">
+                <img src="../assets/images/vaalam.jpg" alt="Валаам">
+                <div class="slide-caption">Валаамский монастырь</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/valaam-2.jpg" alt="Валаам">
+                <div class="slide-caption">Природа Валаама</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/valaam-3.jpg" alt="Валаам">
+                <div class="slide-caption">Архипелаг Валаам</div>
+            </div>
+        </div>
+        
+        <!-- Слайдер для Соловков -->
+        <div class="location-slider" id="slider-solovki">
+            <div class="location-slide">
+                <img src="../assets/images/solovki.jpg" alt="Соловки">
+                <div class="slide-caption">Соловецкий монастырь</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/solovki-2.jpg" alt="Соловки">
+                <div class="slide-caption">Соловецкие острова</div>
+            </div>
+            <div class="location-slide">
+                <img src="../assets/images/solovki-3.jpg" alt="Соловки">
+                <div class="slide-caption">Природа Соловков</div>
+            </div>
+        </div>
+        
+        <div class="gallery-comment">
+            <p>Понравились наши фотографии? Оставьте комментарий или поделитесь впечатлениями!</p>
+            <div class="comment-actions">
+                <a href="#" class="comment-button">Оставить комментарий</a>
+                <a href="#" class="continue-button">Продолжить просмотр</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-panel">
+        <input type="checkbox" id="social-toggle" class="social-toggle" />
+        <label for="social-toggle" class="social-button">
             <i class="fas fa-share-alt"></i>
-         </label>
-         <div class="social-icons">
-            <a href="https://web.telegram.org/a/" class="social-icon"
-               ><img src="../assets/svg/tg.svg" alt="Telegram"
-            /></a>
-            <a
-               href="https://vk.com/topic-8210_600150?offset=620"
-               class="social-icon"
-               ><img src="../assets/svg/vk.svg" alt="VK"
-            /></a>
-         </div>
-      </div>
-      <script
-         type="text/javascript"
-         src="//code.jquery.com/jquery-1.11.0.min.js"
-      ></script>
-      <script
-         type="text/javascript"
-         src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-      ></script>
-      <script type="text/javascript" src="../../slick/slick.min.js"></script>
-      <script type="text/javascript">
-         $(document).ready(function () {
-            $(".penis").slick({
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               dots: false,
-               arrows: true,
-               autoplay: false,
-               autoplaySpeed: 2000,
+        </label>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><img src="../assets/svg/tg.svg" alt="Telegram" /></a>
+            <a href="#" class="social-icon"><img src="../assets/svg/vk.svg" alt="VK" /></a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../assets/svg/logo.svg" alt="Логотип Карелия-Лайнс" />
+                <p>Туроператор по Карелии</p>
+            </div>
+            <div class="footer-links">
+                <h4>Меню</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог туров</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts">
+                <h4>Контакты</h4>
+                <p>г. Петрозаводск, ул. Ленина, 1</p>
+                <p>+7 (8142) 12-34-56</p>
+                <p>info@karelia-lines.ru</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Туроператор "Карелия-Лайнс". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Инициализация слайдера туров
+            $('.tours-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: true,
+                autoplay: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             });
-         });
-      </script>
-   </body>
+            
+            // Инициализация всех слайдеров галереи
+            $('.location-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 5000
+            });
+            
+            // Фильтрация по локациям
+            $('.filter-btn').click(function(){
+                // Удаляем активный класс у всех кнопок
+                $('.filter-btn').removeClass('active');
+                // Добавляем активный класс текущей кнопке
+                $(this).addClass('active');
+                
+                // Скрываем все слайдеры
+                $('.location-slider').removeClass('active');
+                // Показываем выбранный слайдер
+                var location = $(this).data('location');
+                $('#slider-' + location).addClass('active');
+                
+                // Обновляем отображение slick-слайдера
+                $('.location-slider.active').slick('refresh');
+            });
+        });
+    </script>
+</body>
 </html>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Республика Карелия - Туроператор Карелия-Лайнс</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="../../slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css"/>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=M+PLUS+1p&display=swap");
     </style>
@@ -19,6 +19,7 @@
             padding: 0;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Герой-секция */
@@ -38,6 +39,16 @@
             align-items: center;
             padding: 20px 5%;
             background: rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 5%;
         }
 
         .header-icon {
@@ -59,9 +70,27 @@
             font-weight: 500;
             transition: color 0.3s;
             padding: 5px 10px;
+            position: relative;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #4CAF50;
         }
 
@@ -74,17 +103,20 @@
             margin: 0 auto;
             text-align: center;
             padding: 0 5%;
+            padding-top: 100px;
         }
 
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 40px;
             color: #ddd;
+            animation: fadeInUp 1s ease;
         }
 
         .cta-button {
@@ -97,14 +129,21 @@
             display: inline-block;
             width: fit-content;
             margin: 0 auto;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            animation: fadeIn 1.5s ease;
         }
 
         .cta-button:hover {
             background: #3e8e41;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         /* Секции */
+        .section {
+            padding: 80px 0;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 50px;
@@ -114,11 +153,26 @@
             font-size: 2.5rem;
             color: #4CAF50;
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #4CAF50;
         }
 
         .section-header p {
             font-size: 1.2rem;
             color: #a5a5a5;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* Каталог туров */
@@ -140,17 +194,23 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin: 15px;
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
 
         .tour-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
         .tour-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .tour-card:hover img {
+            transform: scale(1.05);
         }
 
         .tour-info {
@@ -160,17 +220,26 @@
         .tour-info h3 {
             margin-top: 0;
             color: #2c3e50;
+            font-size: 1.4rem;
         }
 
         .tour-duration {
             color: #7f8c8d;
             font-size: 0.9rem;
             margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tour-duration i {
+            color: #4CAF50;
         }
 
         .tour-description {
             color: #555;
             margin-bottom: 20px;
+            font-size: 1rem;
         }
 
         .tour-button {
@@ -181,11 +250,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
         .tour-button:hover {
             background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
 
         /* О нас */
@@ -194,6 +265,30 @@
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../assets/images/8f7f0368-f326-49df-95a3-88935cdb43aa..jpg');
             background-size: cover;
             color: white;
+            position: relative;
+            height: 95vh;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .about-section .section-header h2 {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-section .section-header p {
+            color: #ddd;
+            position: relative;
+            z-index: 1;
         }
 
         .about-content {
@@ -202,11 +297,13 @@
             margin: 0 auto;
             gap: 40px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .about-text {
             flex: 1;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.9);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -215,6 +312,8 @@
 
         .about-text p {
             margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .signature {
@@ -246,6 +345,12 @@
         .gallery-top img, .gallery-bottom {
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.5s;
+        }
+
+        .gallery-top img:hover,
+        .gallery-bottom:hover {
+            transform: scale(1.03);
         }
 
         .gallery-top img {
@@ -309,6 +414,7 @@
             height: 400px;
             object-fit: cover;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .slide-caption {
@@ -323,6 +429,73 @@
             text-align: center;
         }
 
+        /* Контакты */
+        .contacts-section {
+            padding: 80px 5%;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.7)), url('../assets/images/background1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contacts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+        }
+
+        .contacts-info {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contacts-info h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: #555;
+        }
+
+        .contacts-map {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+
+        /* Слайдер стили */
         .slick-prev, .slick-next {
             width: 40px;
             height: 40px;
@@ -355,53 +528,6 @@
             color: #4CAF50;
         }
 
-        .gallery-comment {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .gallery-comment p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .comment-actions {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .comment-button, .continue-button {
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .comment-button {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .comment-button:hover {
-            background: #3e8e41;
-        }
-
-        .continue-button {
-            background: #3498db;
-            color: white;
-        }
-
-        .continue-button:hover {
-            background: #2980b9;
-        }
-
         /* Футер */
         .footer {
             background: #2c3e50;
@@ -418,10 +544,25 @@
             gap: 30px;
         }
 
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+
         .footer-logo img {
             width: 50px;
             height: auto;
             margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            color: #bdc3c7;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
         }
 
         .footer-links h4, .footer-contacts h4 {
@@ -447,12 +588,24 @@
         }
 
         .footer-links a:hover {
-            color: #ecf0f1;
+            color: #4CAF50;
+        }
+
+        .footer-contacts {
+            flex: 1;
+            min-width: 250px;
         }
 
         .footer-contacts p {
             margin: 10px 0;
             color: #bdc3c7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contacts i {
+            color: #4CAF50;
         }
 
         .footer-bottom {
@@ -544,7 +697,81 @@
             transform: rotate(45deg);
         }
 
+        /* Кнопка наверх */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #3e8e41;
+            transform: translateY(-3px);
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Адаптивность */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contacts-container {
+                flex-direction: column;
+            }
+            
+            .contacts-map {
+                height: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -555,30 +782,54 @@
             }
             
             .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
+                gap: 20px;
+                transition: all 0.3s;
             }
             
-            .about-content {
-                flex-direction: column;
+            .nav-links.active {
+                left: 0;
             }
             
-            .footer-content {
-                flex-direction: column;
+            
+            .section-header h2 {
+                font-size: 2rem;
             }
             
-            .gallery-row {
-                flex-direction: column;
+            .tour-card {
+                margin: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
             }
             
-            .comment-actions {
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .gallery-filters {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .tour-card {
-                margin: 10px 0;
+            .location-slide img {
+                height: 300px;
             }
         }
     </style>
@@ -587,13 +838,14 @@
     <section class="hero-section">
         <header class="header">
             <img src="../assets/svg/logo.svg" alt="Логотип Карелия-Лайнс" class="header-icon" />
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="catalog.html">Каталог туров</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="#catalog">Каталог туров</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
         </header>
@@ -607,7 +859,7 @@
         </div>
     </section>
 
-    <section class="catalog-section" id="catalog">
+    <section class="section catalog-section" id="catalog">
         <div class="section-header">
             <h2>Популярные туры</h2>
             <p>Выберите путешествие своей мечты среди наших лучших предложений</p>
@@ -617,7 +869,7 @@
                 <img src="../assets/images/kizhi.jpg" alt="Остров Кижи" />
                 <div class="tour-info">
                     <h3>Остров Кижи</h3>
-                    <p class="tour-duration">2 дня / 1 ночь</p>
+                    <p class="tour-duration"><i class="fas fa-calendar-alt"></i> 2 дня / 1 ночь</p>
                     <p class="tour-description">Знакомство с архитектурным ансамблем Кижского погоста</p>
                     <a href="#" class="tour-button">Подробнее</a>
                 </div>
@@ -626,7 +878,7 @@
                 <img src="../assets/images/ruskeala.jpeg" alt="Горный парк Рускеала" />
                 <div class="tour-info">
                     <h3>Горный парк Рускеала</h3>
-                    <p class="tour-duration">3 дня / 2 ночи</p>
+                    <p class="tour-duration"><i class="fas fa-calendar-alt"></i> 3 дня / 2 ночи</p>
                     <p class="tour-description">Мраморный каньон, подземные озера и захватывающие дух пейзажи</p>
                     <a href="#" class="tour-button">Подробнее</a>
                 </div>
@@ -635,7 +887,7 @@
                 <img src="../assets/images/vaalam.jpg" alt="Остров Валаам" />
                 <div class="tour-info">
                     <h3>Остров Валаам</h3>
-                    <p class="tour-duration">3 дня / 2 ночи</p>
+                    <p class="tour-duration"><i class="fas fa-calendar-alt"></i> 3 дня / 2 ночи</p>
                     <p class="tour-description">Духовное сердце Карелии - Валаамский монастырь и уникальная природа архипелага</p>
                     <a href="#" class="tour-button">Подробнее</a>
                 </div>
@@ -644,7 +896,7 @@
                 <img src="../assets/images/solovki.jpg" alt="Соловецкие острова" />
                 <div class="tour-info">
                     <h3>Соловецкие острова</h3>
-                    <p class="tour-duration">4 дня / 3 ночи</p>
+                    <p class="tour-duration"><i class="fas fa-calendar-alt"></i> 4 дня / 3 ночи</p>
                     <p class="tour-description">История, природа и загадки Соловецкого архипелага</p>
                     <a href="#" class="tour-button">Подробнее</a>
                 </div>
@@ -652,9 +904,9 @@
         </div>
     </section>
 
-    <section class="about-section">
+    <section class="section about-section" id="about">
         <div class="section-header">
-            <h2 class="about-us-text">О нас</h2>
+            <h2>О нас</h2>
             <p>Почему стоит выбрать нас для вашего путешествия по Карелии</p>
         </div>
         <div class="about-content">
@@ -677,7 +929,7 @@
         </div>
     </section>
 
-    <section class="gallery-section">
+    <section class="section gallery-section" id="gallery">
         <div class="section-header">
             <h2>Галерея</h2>
             <p>Выберите локацию для просмотра фотографий</p>
@@ -695,15 +947,15 @@
         <div class="location-slider active" id="slider-all">
             <div class="location-slide">
                 <img src="../assets/images/7114e86e8099319b1b6dd24ee3de0f76.jpg" alt="Карелия">
-                <div class="slide-caption">Природа Карелии</div>
+                <div class="slide-caption">Красота Карелии</div>
             </div>
             <div class="location-slide">
                 <img src="../assets/images/dd575810-fc6f-437e-b534-fdf5c9a68722.jpeg" alt="Карелия">
-                <div class="slide-caption">Озёра Карелии</div>
+                <div class="slide-caption">Природа Карелии</div>
             </div>
             <div class="location-slide">
                 <img src="../assets/images/mramornyy_kanon_ruskeala.jpg" alt="Карелия">
-                <div class="slide-caption">Лесные пейзажи</div>
+                <div class="slide-caption">Мраморный каньон</div>
             </div>
         </div>
         
@@ -711,15 +963,15 @@
         <div class="location-slider" id="slider-ruskeala">
             <div class="location-slide">
                 <img src="../assets/images/ruskeala.jpeg" alt="Рускеала">
-                <div class="slide-caption">Мраморный каньон</div>
+                <div class="slide-caption">Горный парк Рускеала</div>
             </div>
             <div class="location-slide">
                 <img src="../assets/images/rekashuya.jpg" alt="Рускеала">
-                <div class="slide-caption">Подземное озеро</div>
+                <div class="slide-caption">Водопады Рускеалы</div>
             </div>
             <div class="location-slide">
                 <img src="../assets/images/ruskeala-3.jpg" alt="Рускеала">
-                <div class="slide-caption">Вид сверху</div>
+                <div class="slide-caption">Мраморный карьер</div>
             </div>
         </div>
         
@@ -731,11 +983,11 @@
             </div>
             <div class="location-slide">
                 <img src="../assets/images/kizhi-2.jpg" alt="Кижи">
-                <div class="slide-caption">Деревянные церкви</div>
+                <div class="slide-caption">Церковь Преображения Господня</div>
             </div>
             <div class="location-slide">
                 <img src="../assets/images/kizhi-3.jpg" alt="Кижи">
-                <div class="slide-caption">Музей под открытым небом</div>
+                <div class="slide-caption">Архитектурный ансамбль</div>
             </div>
         </div>
         
@@ -751,7 +1003,7 @@
             </div>
             <div class="location-slide">
                 <img src="../assets/images/valaam-3.jpg" alt="Валаам">
-                <div class="slide-caption">Архипелаг Валаам</div>
+                <div class="slide-caption">Скиты Валаама</div>
             </div>
         </div>
         
@@ -770,55 +1022,64 @@
                 <div class="slide-caption">Природа Соловков</div>
             </div>
         </div>
-        
-        <div class="gallery-comment">
-            <p>Понравились наши фотографии? Оставьте комментарий или поделитесь впечатлениями!</p>
-            <div class="comment-actions">
-                <a href="#" class="comment-button">Оставить комментарий</a>
-                <a href="#" class="continue-button">Продолжить просмотр</a>
-            </div>
-        </div>
     </section>
 
-    <div class="social-panel">
-        <input type="checkbox" id="social-toggle" class="social-toggle" />
-        <label for="social-toggle" class="social-button">
-            <i class="fas fa-share-alt"></i>
-        </label>
-        <div class="social-icons">
-            <a href="#" class="social-icon"><img src="../assets/svg/tg.svg" alt="Telegram" /></a>
-            <a href="#" class="social-icon"><img src="../assets/svg/vk.svg" alt="VK" /></a>
+    <section class="section contacts-section" id="contacts">
+        <div class="section-header">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами для бронирования тура или получения консультации</p>
         </div>
-    </div>
+        
+        <div class="contacts-container">
+            <div class="contacts-info">
+                <h3>Наши контакты</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Адрес</h4>
+                        <p>г. Петрозаводск, ул. Ленина, 1</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Телефон</h4>
+                        <p>+7 (8142) 12-34-56</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p>info@karelia-lines.ru</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Часы работы</h4>
+                        <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: 10:00 - 16:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacts-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a&amp;source=constructor" width="555px"; height="555px">Мы здесь!</iframe>
+            </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="../assets/svg/logo.svg" alt="Логотип Карелия-Лайнс" />
-                <p>Туроператор по Карелии</p>
-            </div>
-            <div class="footer-links">
-                <h4>Меню</h4>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог туров</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="footer-contacts">
-                <h4>Контакты</h4>
-                <p>г. Петрозаводск, ул. Ленина, 1</p>
-                <p>+7 (8142) 12-34-56</p>
-                <p>info@karelia-lines.ru</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2023 Туроператор "Карелия-Лайнс". Все права защищены.</p>
-        </div>
-    </footer>
-
+            
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
@@ -878,5 +1139,5 @@
             });
         });
     </script>
-</body>
-</html>
+
+        

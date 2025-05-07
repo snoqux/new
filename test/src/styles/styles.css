@@ -1,6 +1,11 @@
 /* Основные стили */
+
+* {
+   margin: 0;
+}
+
 body {
-   font-family: 'Jost', sans-serif;
+   font-family: "Jost", sans-serif;
    margin: 0;
    padding: 0;
    color: #333;
@@ -15,7 +20,6 @@ body {
    margin: 0;
    padding: 0;
 }
-
 
 .dobro {
    font-size: 45px;
@@ -115,10 +119,10 @@ body {
 }
 
 .onas-text {
-    background-color: #696969;
-    height: max-content;
-    padding: 16px;
-    border-radius: 20px;
+   background-color: #696969;
+   height: max-content;
+   padding: 16px;
+   border-radius: 20px;
    font-size: 25px;
    color: #1ff35f;
    display: flex;
@@ -128,20 +132,19 @@ body {
 }
 
 .end-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 
-    img {
-        width: 60px;
-        height: 60px;
-    }
+   img {
+      width: 60px;
+      height: 60px;
+   }
 }
-
 
 /* Герой-секция */
 .hero-section {
-   background-image: url('../../assets/images/background1.jpg');
+   background-image: url("../../assets/images/background1.jpg");
    background-size: cover;
    background-position: center;
    min-height: 100vh;
@@ -149,7 +152,6 @@ body {
    flex-direction: column;
    color: white;
 }
-
 
 .header-icon {
    width: 50px;
@@ -172,8 +174,9 @@ body {
    padding: 5px 10px;
 }
 
-.nav-links a:hover, .nav-links a.active {
-   color: #4CAF50;
+.nav-links a:hover,
+.nav-links a.active {
+   color: #4caf50;
 }
 
 .hero-content {
@@ -198,7 +201,7 @@ body {
 }
 
 .cta-button {
-   background: #4CAF50;
+   background: #4caf50;
    color: white;
    padding: 15px 30px;
    border-radius: 50px;
@@ -216,20 +219,22 @@ body {
 
 /* Секции */
 .section-header {
-   text-align: center;
-   margin-bottom: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   h2 {
+      font-size: 2.5rem;
+      color: #4caf50;
+   }
+
+   p {
+      font-size: 1.2rem;
+      color: #a5a5a5;
+   }
 }
 
-.section-header h2 {
-   font-size: 2.5rem;
-   color: #4CAF50;
-   margin-bottom: 15px;
-}
 
-.section-header p {
-   font-size: 1.2rem;
-   color: #a5a5a5;
-}
 .about-us-text {
    color: #fff;
 }
@@ -237,7 +242,11 @@ body {
 /* Каталог туров */
 .catalog-section {
    padding: 80px 5%;
-   background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('../../assets/images/img_66577a1be2e34.jpg');
+   background: linear-gradient(
+         rgba(255, 255, 255, 0.7),
+         rgba(255, 255, 255, 0.9)
+      ),
+      url("../../assets/images/img_66577a1be2e34.jpg");
    background-size: cover;
    background-position: center;
    min-height: 100vh;
@@ -253,7 +262,7 @@ body {
    background: rgb(255, 255, 255);
    border-radius: 10px;
    overflow: hidden;
-   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
    margin: 15px;
    transition: transform 0.3s;
 }
@@ -306,9 +315,9 @@ body {
 /* О нас */
 .about-section {
    padding: 80px 5%;
-   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../../assets/images/8f7f0368-f326-49df-95a3-88935cdb43aa..jpg');
+   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+      url("../../assets/images/8f7f0368-f326-49df-95a3-88935cdb43aa..jpg");
    background-size: cover;
-
 }
 .about-section h2 {
    color: aliceblue;
@@ -324,10 +333,10 @@ body {
 
 .about-text {
    flex: 1;
-   background: rgba(255,255,255,0.8);
+   background: rgba(255, 255, 255, 0.8);
    padding: 30px;
    border-radius: 10px;
-   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-text p {
@@ -360,9 +369,10 @@ body {
    gap: 20px;
 }
 
-.gallery-top img, .gallery-bottom {
+.gallery-top img,
+.gallery-bottom {
    border-radius: 10px;
-   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-top img {
@@ -399,7 +409,8 @@ body {
    margin-bottom: 15px;
 }
 
-.footer-links h4, .footer-contacts h4 {
+.footer-links h4,
+.footer-contacts h4 {
    font-size: 1.2rem;
    margin-bottom: 20px;
    color: #ecf0f1;
@@ -529,7 +540,6 @@ body {
    padding: 0;
 }
 
-
 .header {
    background: #ffffff2d;
    color: #ffffff;
@@ -632,19 +642,19 @@ body {
    align-items: center;
    display: flex;
    flex-direction: column;
-   }
-   
-   .footer-content {
-      flex-direction: column;
-   }
+}
+
+.footer-content {
+   flex-direction: column;
+}
 
 .end-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 
-    img {
-        width: 60px;
-        height: 60px;
-    }
+   img {
+      width: 60px;
+      height: 60px;
+   }
 }
